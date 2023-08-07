@@ -110,3 +110,10 @@ To iterate through a CSV file, you can use a for loop to call the next() method 
 The CSV module in Python can be used to generate CSV files.
 
 To generate a CSV file, you can use the csv.writer() function to create a writer object.
+
+CSV files can be cumbersome to work with when there are many columns.
+
+DictReader and DictWriter can be used to read and write CSV files with named columns.
+
+DictReader allows you to access data by column name, while
+DictWriter allows you to generate CSV files from a list of dictionaries.

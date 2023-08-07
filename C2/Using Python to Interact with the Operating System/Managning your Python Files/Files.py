@@ -107,3 +107,17 @@ hosts = [["workstation.local","192.168.25.46"],["webserver.cloud","10.2.5.6"]]
 with open('host.csv','w') as hosts_csv:
     write = csv.writer(hosts_csv)
     write.writerows(hosts)
+
+with open('software.csv') as software:
+    reader =  csv.DictReader(software)
+    for row in reader:
+        print((" {} has {} users.").format(row["name"],row["users"]))
+
+
+users = [{"name":"Rajeev Kumar","username":"rk@gmail.com","password":"Rk@1234","department":"IT"},{"name":"chamcham Kumari","username":"chmmoo@gmail.com","password":"Ck@1234","department":"Medical"}]
+
+keys = ["name","username","department"]
+with open('document.csv' , 'w') as software:
+    writer = csv.DictWriter(software,fieldnames=keys)
+    writer.writeheader()
+    writer.writerows(users)
