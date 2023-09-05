@@ -111,3 +111,78 @@ For example, regexes can be used to extract the process identifier from a log en
 .For example, the pattern A.\*a matches any string that starts and ends with the letter a.
 
 .We can make our patterns stricter by adding the beginning of a line (^) and end of a line (\<span class="math-inline">\) characters. _ For example, the pattern `^a\$` matches any string that only contains the letter `a`. _ We can also use regular expressions to validate strings. For example, the pattern `^[a-zA-Z_]+\` matches any string that starts with a letter or underscore and contains only letters, numbers, or underscores.
+
+**_Advanced Regular Expression_**
+
+.Capturing groups are portions of a regular expression that are enclosed in parentheses.
+
+.They can be used to extract specific information from a string that matches the regular expression.
+For example, a capturing group could be used to extract the hostname from a log line.
+.To access the information that is captured in a group, you can use the groups() method of the re.Match object.
+
+.The groups() method returns a tuple of all of the captured groups.
+
+.You can also access individual groups by their index.
+
+.The first group contains the text that matched the entire regular expression.
+
+.Subsequent groups contain the text that matched each of the subsequent capturing groups.
+
+.In the video, a function was defined to rearrange names that were stored in the format last name, comma, first name.
+
+.The function used a regular expression with capturing groups to extract the first and last names from the string.
+
+.The function then returned the string with the first name and last name reversed.
+
+.The function was tested with a few names, and it worked as expected.
+
+.However, the function did not work correctly when the name included a middle initial.
+
+.This is because the regular expression only matched letters.
+To fix this, the regular expression was updated to include spaces, dots, and dashes.
+
+.The updated function was then able to rearrange names that included middle initials.
+
+.Numeric repetition qualifiers are used to specify the number of times a pattern should be repeated.
+
+.They are written between curly brackets.
+
+.A single number in the curly brackets specifies an exact number of repetitions.
+
+.A range of numbers in the curly brackets specifies a minimum and maximum number of repetitions.
+
+.The open ended qualifiers {n,} and {,m} match a string with at least n or at most m repetitions, respectively.
+
+.Numeric repetition qualifiers can be used with any of the other regular expression metacharacters.
+
+.\d{3} matches a string of exactly three digits.
+
+.[a-z]{5,10} matches a string of five to ten lowercase letters.
+
+.\w{,20} matches a string of up to 20 alphanumeric characters.
+
+**_Extracting a PID Using regexes in Python_**
+
+.findall(): Returns a list of all the substrings that match the regular expression.
+
+.split(): Splits the string into substrings based on the regular expression.
+
+.sub(): Replaces all the substrings that match the regular expression with a new substring.
+
+.compile(): Compiles the regular expression into a regular expression object.
+
+.match(): Returns a match object if the regular expression matches the beginning of the string.
+
+.search(): Returns a match object if the regular expression matches anywhere in the string.
+
+**_Splitting and Replacing_**
+
+.The split() function splits a string into substrings based on a regular expression.
+
+.The sub() function replaces all the substrings that match a regular expression with a new substring.
+
+.The split() function takes two arguments: the string to split and the regular expression to use as a separator.
+
+.The sub() function takes three arguments: the regular expression, the replacement string, and the string to search.
+
+.The sub() function returns a new string with the replacements made.
